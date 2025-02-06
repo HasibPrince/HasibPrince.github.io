@@ -29,18 +29,38 @@
             border: 3px solid #bb86fc;
         }
     /* Ensure images stay centered and responsive */
-    .row {
-        justify-content: center;
-        align-items: center;
-        display: inline-flex;  /* Ensures row wraps its content */
-        flex-wrap: wrap;       /* Allows wrapping */
-        width: auto;
-    }
+        .row {
+            justify-content: center;
+            align-items: center;
+            display: inline-flex;  /* Ensures row wraps its content */
+            flex-wrap: wrap;       /* Allows wrapping */
+            width: auto;
+        }
+        .android-header {
+            background: url('images/android-background.jpg') no-repeat center center;
+            background-size: cover;
+            position: relative;
+        }   
+
+        .android-header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6); /* Dark overlay for better text visibility */
+        }
+
+        .android-header * {
+            position: relative;
+            z-index: 1;
+        }
     </style>
 </head>
 <body>
     <!-- Header Section -->
-    <header class="bg-dark text-white text-center py-5">
+    <header class="bg-dark text-white text-center py-5 android-header">
         <img src="images/profile.jpg" alt="Profile Picture" class="profile-img mb-3">
         <h1>Md. Hasibun Nayem</h1>
         <p>Software Engineer (Mobile) | Android & Flutter</p>
